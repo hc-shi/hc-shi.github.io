@@ -5,8 +5,8 @@ src/app/icon.svg is the source of truth; keep RECTS in sync with it. Run from th
 """
 from PIL import Image, ImageDraw
 
-PAPER = (250, 247, 240)
-ACCENT = (142, 42, 27)
+PAPER = (255, 255, 255)
+ACCENT = (45, 106, 79)
 # (x, y, width, height) on the 64x64 grid of icon.svg
 RECTS = [(17, 14, 8, 36), (39, 14, 8, 36), (25, 29, 14, 6),
          (12, 12, 18, 4), (12, 48, 18, 4), (34, 12, 18, 4), (34, 48, 18, 4)]

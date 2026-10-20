@@ -4,7 +4,7 @@ import { profile } from "@/data/profile";
 
 const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 const circle =
-  "inline-flex h-8 w-8 items-center justify-center rounded-full border border-rule bg-surface text-ink2 hover:border-acc hover:bg-acc/8 hover:text-acc";
+  "inline-flex h-8 w-8 items-center justify-center rounded-full border border-rule bg-surface text-ink2 hover:border-acc hover:bg-acc hover:text-on-acc";
 
 export function ProfileHeader() {
   return (
@@ -50,7 +50,7 @@ export function ProfileHeader() {
         <a
           href={profile.links.cv}
           {...external}
-          className="inline-flex h-8 items-center rounded-2xl border border-rule bg-surface px-3 font-sans text-[12px] font-semibold tracking-[.08em] text-ink2 hover:border-acc hover:bg-acc/8 hover:text-acc"
+          className="inline-flex h-8 items-center rounded-2xl border border-rule bg-surface px-3 font-sans text-[12px] font-semibold tracking-[.08em] text-ink2 hover:border-acc hover:bg-acc hover:text-on-acc"
         >
           CV · PDF
         </a>

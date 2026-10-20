@@ -12,8 +12,9 @@
   --mute: #666666;
   --faint: #737373;
   --rule: #e6e6e4;
-  --acc: #8e2a1b;
-  --accsoft: #e5c3bc;
+  --acc: #2d6a4f;
+  --accsoft: #b9d4c6;
+  --on-acc: #ffffff;
   --e-ink: #2f2f2f;
   --e-mid: #9d9d9d;
   --e-soft: #b8b8b8;
@@ -32,8 +33,9 @@
     --mute: #92908b;
     --faint: #7f7c77;
     --rule: #30302e;
-    --acc: #e16e58;
-    --accsoft: #653a31;
+    --acc: #52b788;
+    --accsoft: #2d5944;
+    --on-acc: #0f0f0e;
     --e-ink: #cecbc2;
     --e-mid: #6d6b66;
     --e-soft: #575652;
@@ -54,6 +56,7 @@
   --color-rule: var(--rule);
   --color-acc: var(--acc);
   --color-accsoft: var(--accsoft);
+  --color-on-acc: var(--on-acc);
   --font-serif: var(--font-newsreader), Georgia, serif;
   --font-zh: var(--font-name-zh), "Songti SC", serif;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;

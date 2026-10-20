@@ -5,7 +5,7 @@ export const topics: Topic[] = [
     id: "recursive-reasoning",
     name: "Latent Reasoning & Test-Time Scaling",
     blurb:
-      "Tiny models that reason by iterating one learned update on a latent state, and how to scale their compute at test time.",
+      "Models that reason in latent space, and how to scale their compute at test time.",
     current: true,
   },
   {
@@ -42,7 +42,7 @@ export const publications: Publication[] = [
     year: 2026,
     topic: "recursive-reasoning",
     representative: true,
-    tldr: "Changing the input condition gives a frozen reasoner new update maps to search over. Highest mean accuracy on six reasoning tasks, with up to 100× fewer FLOPs than scaling baselines.",
+    tldr: "Searches over recursive reasoning functions to explore diverse reasoning traces, without any additional training. Highest mean accuracy on six reasoning tasks, with up to 100× fewer FLOPs than scaling baselines.",
     links: {
       paper: "https://arxiv.org/abs/2610.18547",
       project: "https://icsearch.github.io/",

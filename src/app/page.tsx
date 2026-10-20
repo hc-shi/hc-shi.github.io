@@ -1,4 +1,5 @@
 import { ProfileHeader } from "@/components/ProfileHeader";
+import { ResearchSection } from "@/components/ResearchSection";
 import { SiteNav } from "@/components/SiteNav";
 import { getPublishedPosts } from "@/lib/posts";
 
@@ -9,6 +10,7 @@ export default function HomePage() {
       <SiteNav active="research" showWriting={posts.length > 0} />
       <main>
         <ProfileHeader />
+        <ResearchSection posts={posts} />
       </main>
     </>
   );

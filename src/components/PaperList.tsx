@@ -1,0 +1,42 @@
+import { AuthorList } from "@/components/AuthorList";
+import { formatVenue, titleWithPeriod } from "@/lib/research";
+import type { Publication } from "@/types";
+
+const external = { target: "_blank", rel: "noopener noreferrer" } as const;
+
+/** "N more in this topic": native <details>, closed by default, no JavaScript. */
+export function PaperList({ pubs }: { pubs: Publication[] }) {
+  return (
+    <details className="border-t border-rule pb-0.5 pt-2">
+      <summary className="more-summary cursor-pointer font-sans text-[13px] text-ink2">
+        {pubs.length} more in this topic
+      </summary>
+      <ul className="mb-1 ml-3.5 mt-2">
+        {pubs.map((pub) => (
+          <li key={pub.id} className="mb-[9px] text-[14px] leading-[1.45]">
+            <a href={pub.links.paper} {...external} className="font-semibold text-ink hover:underline">
+              {titleWithPeriod(pub.title)}
+            </a>{" "}
+            <span className="text-mute">
+              <AuthorList authors={pub.authors} mode="short" endWithPeriod />
+            </span>{" "}
+            <span className="text-[10px] uppercase tracking-[.13em] text-acc">{formatVenue(pub, "folded")}</span>
+            {pub.links.code && (
+              <>
+                <span className="text-[10px] text-acc"> · </span>
+                <a
+                  href={pub.links.code}
+                  {...external}
+                  className="text-[10px] uppercase tracking-[.13em] text-acc hover:underline"
+                >
+                  code
+                </a>
+              </>
+            )}
+            {pub.summary && <span className="block text-[13.5px] italic text-ink2">{pub.summary}</span>}
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}

@@ -25,7 +25,7 @@ npm run preview   # serve out/ on port 4173
 - `src/lib/`: display logic, each module with unit tests.
 - `src/components/emblems/`: one SVG component per representative paper.
 - `src/app/globals.css`: colour tokens (light; dark via `prefers-color-scheme`) and post typography.
-- `design/`: sources for `public/og.png` and the icon rasters.
+- `design/`: source for `public/og.png`.
 
 ## Workflows
 

@@ -36,6 +36,8 @@ export const metadata: Metadata = {
   },
   // Only the card type: Next fills twitter title, description and image from each page's openGraph.
   twitter: { card: "summary_large_image" },
+  // No favicon, by the owner's choice; an empty icon stops browsers from requesting /favicon.ico.
+  icons: { icon: "data:," },
 };
 
 export const viewport: Viewport = {

@@ -22,22 +22,25 @@ function authorToken(raw: string): AuthorToken {
 /**
  * Spec §3.4. Representatives ("full") list everyone. Folded papers ("short") list
  * up to six authors in full; otherwise they stop after Haochen Shi (at least three
- * names) and add "et al." when he is among the first eight, or show the first three,
- * "…", his name, "…" and the author count when he comes later.
+ * names) when he is among the first eight, or show the first three, "…", his name
+ * and the author count when he comes later. "et al." and the trailing "…" appear
+ * only when somebody is actually left out.
  */
 export function displayAuthors(authors: string[], mode: AuthorMode): AuthorToken[] {
   if (mode === "full" || authors.length <= 6) return authors.map(authorToken);
   const selfIndex = authors.findIndex((a) => parseAuthor(a).name === SELF);
   if (selfIndex >= 8) {
-    return [
+    const tokens: AuthorToken[] = [
       ...authors.slice(0, 3).map(authorToken),
       { kind: "ellipsis" },
       authorToken(authors[selfIndex]),
-      { kind: "ellipsis" },
-      { kind: "count", total: authors.length },
     ];
+    if (selfIndex < authors.length - 1) tokens.push({ kind: "ellipsis" });
+    tokens.push({ kind: "count", total: authors.length });
+    return tokens;
   }
-  return [...authors.slice(0, Math.max(3, selfIndex + 1)).map(authorToken), { kind: "etal" }];
+  const shown = authors.slice(0, Math.max(3, selfIndex + 1)).map(authorToken);
+  return shown.length < authors.length ? [...shown, { kind: "etal" }] : shown;
 }
 
 export function tokenText(t: AuthorToken): string {

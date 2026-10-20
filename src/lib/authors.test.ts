@@ -39,6 +39,18 @@ describe("displayAuthors", () => {
     expect(tokens[1]).toEqual({ kind: "author", name: "Haochen Shi", marker: "*", self: true });
   });
 
+  it("adds et al. only when someone is actually left out", () => {
+    const seven = ["A", "B", "C", "D", "E", "F", "Haochen Shi"];
+    expect(authorsToText(displayAuthors(seven, "short"))).toBe("A, B, C, D, E, F, Haochen Shi");
+    const eight = ["A", "B", "C", "D", "E", "F", "G", "Haochen Shi"];
+    expect(authorsToText(displayAuthors(eight, "short"))).toBe("A, B, C, D, E, F, G, Haochen Shi");
+  });
+
+  it("drops the trailing ellipsis when Haochen Shi is the last of many authors", () => {
+    const ten = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "Haochen Shi"];
+    expect(authorsToText(displayAuthors(ten, "short"))).toBe("A, B, C, …, Haochen Shi (10 authors)");
+  });
+
   it("falls back to the first three names when Haochen Shi is absent", () => {
     expect(authorsToText(displayAuthors(["A", "B", "C", "D", "E", "F", "G"], "short"))).toBe("A, B, C, et al.");
   });

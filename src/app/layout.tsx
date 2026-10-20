@@ -1,6 +1,7 @@
 import { Newsreader } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -23,7 +24,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${nameZh.variable}`}>
       <body className="bg-paper font-serif text-ink antialiased">
-        <div className="mx-auto w-full max-w-[704px] px-4 pb-[30px]">{children}</div>
+        <div className="mx-auto w-full max-w-[704px] px-4 pb-[30px]">
+          {children}
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

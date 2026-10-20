@@ -1,3 +1,15 @@
+import { ProfileHeader } from "@/components/ProfileHeader";
+import { SiteNav } from "@/components/SiteNav";
+import { getPublishedPosts } from "@/lib/posts";
+
 export default function HomePage() {
-  return <main className="pt-10 text-[34px] font-medium">Haochen Shi</main>;
+  const posts = getPublishedPosts();
+  return (
+    <>
+      <SiteNav active="research" showWriting={posts.length > 0} />
+      <main>
+        <ProfileHeader />
+      </main>
+    </>
+  );
 }

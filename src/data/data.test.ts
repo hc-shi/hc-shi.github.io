@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { education, experience, teachingAndAwards } from "@/data/cv";
+import { education, teachingAndAwards } from "@/data/cv";
 import { profile } from "@/data/profile";
 import { publications, topics } from "@/data/research";
 
@@ -79,8 +79,7 @@ describe("copy", () => {
 });
 
 describe("cv", () => {
-  it("matches the resume: 2 experience rows, 3 education rows, 8 teaching and award rows", () => {
-    expect(experience).toHaveLength(2);
+  it("matches the resume: 3 education rows, 8 teaching and award rows", () => {
     expect(education).toHaveLength(3);
     expect(teachingAndAwards).toHaveLength(8);
   });

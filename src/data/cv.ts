@@ -1,15 +1,6 @@
 import type { CompactEntry, TimelineEntry } from "@/types";
 
 // Matches the current resume (spec §3.5).
-export const experience: TimelineEntry[] = [
-  { period: "2021 – Present", heading: "Université de Montréal / Mila", detail: "Ph.D. Candidate, advised by Bang Liu" },
-  {
-    period: "2018 – 2021",
-    heading: "Zhejiang University",
-    detail: "Research Assistant, advised by Jian Shao and Siliang Tang",
-  },
-];
-
 export const education: TimelineEntry[] = [
   { period: "2021 – Present", heading: "Ph.D. Computer Science", detail: "Université de Montréal / Mila" },
   { period: "2021", heading: "M.S. Computer Science", detail: "Zhejiang University" },

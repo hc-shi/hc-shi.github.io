@@ -71,6 +71,26 @@ describe("parsePost", () => {
     expect(() => parsePost("bad-post.mdx", post(fields))).toThrow(/bad-post\.mdx/);
   });
 
+  it.each([
+    ['"2026-11-31"', "a day that does not exist"],
+    ['"2026-13-45"', "a month that does not exist"],
+    ["2026-02-30", "an unquoted impossible day"],
+    ["2026-11-02T22:30:00-05:00", "a timestamp instead of a date"],
+  ])("rejects the date %s (%s) and names the file", (date) => {
+    expect(() => parsePost("bad-post.mdx", post({ ...valid, date }))).toThrow(/bad-post\.mdx: date must be YYYY-MM-DD/);
+  });
+
+  it("names the file when the frontmatter is not valid YAML", () => {
+    const broken = "---\ntitle: [unclosed\n---\nBody\n";
+    expect(() => parsePost("bad-post.mdx", broken)).toThrow(/bad-post\.mdx: frontmatter is not valid YAML/);
+  });
+
+  it("reports the YAML error again when the same file is parsed twice", () => {
+    const broken = "---\ntitle: [also unclosed\n---\nBody\n";
+    expect(() => parsePost("bad-post.mdx", broken)).toThrow(/not valid YAML/);
+    expect(() => parsePost("bad-post.mdx", broken)).toThrow(/not valid YAML/);
+  });
+
   it.each(["My Post.mdx", "My-post.mdx", "my_post.mdx"])("rejects the file name %s", (name) => {
     expect(() => parsePost(name, post(valid))).toThrow(/lowercase words joined by hyphens/);
   });

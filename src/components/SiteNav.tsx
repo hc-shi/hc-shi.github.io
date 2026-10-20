@@ -11,10 +11,10 @@ interface SiteNavProps {
 
 export function SiteNav({ active, showWriting }: SiteNavProps) {
   const tone = (section?: NavSection) =>
-    section !== undefined && section === active ? "text-ink" : "text-faint hover:text-ink";
+    section !== undefined && section === active ? "text-ink hover:text-acc" : "text-faint hover:text-acc";
   return (
     <header className="flex items-baseline justify-between border-b border-rule pb-[10px] pt-[18px] text-[14px]">
-      <Link href="/" className="text-ink">
+      <Link href="/" className="text-ink hover:text-acc">
         {profile.name}
       </Link>
       <nav aria-label="Main" className="flex gap-[18px] text-[11.5px] uppercase tracking-[.13em]">

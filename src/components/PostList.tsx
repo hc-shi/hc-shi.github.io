@@ -7,7 +7,7 @@ export function PostList({ posts }: { posts: Post[] }) {
     <ul>
       {posts.map((post) => (
         <li key={post.slug} className="py-1.5 leading-[1.45]">
-          <Link href={`/writing/${post.slug}/`} className="text-[16px] font-semibold text-ink hover:underline">
+          <Link href={`/writing/${post.slug}/`} className="text-[16px] font-semibold text-ink underline-offset-2 hover:text-acc hover:underline">
             {post.title}
           </Link>
           <span className="block text-[13.5px] text-faint">

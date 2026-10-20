@@ -8,13 +8,13 @@ const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 export function PaperList({ pubs }: { pubs: Publication[] }) {
   return (
     <details className="pb-0.5 pt-2">
-      <summary className="more-summary cursor-pointer font-sans text-[13px] text-ink2">
+      <summary className="more-summary cursor-pointer font-sans text-[13px] text-ink2 hover:text-acc">
         {pubs.length} more in this topic
       </summary>
       <ul className="mb-1 ml-3.5 mt-2 min-[600px]:pl-10">
         {pubs.map((pub) => (
           <li key={pub.id} className="mb-[9px] text-[14px] leading-[1.45]">
-            <a href={pub.links.paper} {...external} className="font-semibold text-ink hover:underline">
+            <a href={pub.links.paper} {...external} className="font-semibold text-ink underline-offset-2 hover:text-acc hover:underline">
               {titleWithPeriod(pub.title)}
             </a>{" "}
             <span className="text-mute">
@@ -27,7 +27,7 @@ export function PaperList({ pubs }: { pubs: Publication[] }) {
                 <a
                   href={pub.links.code}
                   {...external}
-                  className="text-[10px] uppercase tracking-[.13em] text-faint hover:underline"
+                  className="text-[10px] uppercase tracking-[.13em] text-faint hover:text-acc hover:underline"
                 >
                   code
                 </a>

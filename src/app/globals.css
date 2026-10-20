@@ -66,6 +66,13 @@
   border-radius: 2px;
 }
 
+/* Hover feedback eases in instead of snapping. */
+:where(a, summary) {
+  transition-property: color, background-color, border-color, text-decoration-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
 /* "N more in this topic" disclosure: native <details>, no JavaScript. */
 .more-summary {
   list-style: none;

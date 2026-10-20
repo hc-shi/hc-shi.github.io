@@ -19,7 +19,7 @@ export function RepresentativePaper({ pub }: { pub: Publication }) {
       </div>
       <div>
         <h4 className="text-[15.5px] font-semibold leading-[1.35]">
-          <a href={pub.links.paper} {...external} className="hover:underline">
+          <a href={pub.links.paper} {...external} className="underline-offset-2 hover:text-acc hover:underline">
             {pub.title}
           </a>
         </h4>
@@ -36,7 +36,7 @@ export function RepresentativePaper({ pub }: { pub: Publication }) {
               key={key}
               href={pub.links[key]}
               {...external}
-              className="rounded-[10px] border border-rule bg-surface px-2 py-1 font-sans text-[10px] font-semibold uppercase leading-none tracking-[.08em] text-ink2 hover:text-acc"
+              className="rounded-[10px] border border-rule bg-surface px-2 py-1 font-sans text-[10px] font-semibold uppercase leading-none tracking-[.08em] text-ink2 hover:border-acc hover:bg-acc/8 hover:text-acc"
             >
               {label}
             </a>

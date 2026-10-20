@@ -11,7 +11,7 @@ export function PaperList({ pubs }: { pubs: Publication[] }) {
       <summary className="more-summary cursor-pointer font-sans text-[13px] text-ink2">
         {pubs.length} more in this topic
       </summary>
-      <ul className="mb-1 ml-3.5 mt-2">
+      <ul className="mb-1 ml-3.5 mt-2 min-[600px]:pl-10">
         {pubs.map((pub) => (
           <li key={pub.id} className="mb-[9px] text-[14px] leading-[1.45]">
             <a href={pub.links.paper} {...external} className="font-semibold text-ink hover:underline">

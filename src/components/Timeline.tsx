@@ -3,7 +3,7 @@ import type { TimelineEntry } from "@/types";
 /** "Year | content" rows; below 600px the year sits above the content. */
 export function Timeline({ entries }: { entries: TimelineEntry[] }) {
   return (
-    <ul>
+    <ul className="my-4 min-[600px]:pl-10">
       {entries.map((entry) => (
         <li
           key={`${entry.period}-${entry.heading}`}

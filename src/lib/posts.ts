@@ -12,6 +12,8 @@ export const PLACEHOLDER_SLUG = "_placeholder";
 
 const TOPIC_IDS = new Set<string>(topics.map((t) => t.id));
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const MARKDOWN_FILE = /\.(md|markdown|mdx)$/i;
+const FRONTMATTER_KEYS = ["title", "date", "description", "tags", "published", "topics"];
 
 function fail(fileName: string, message: string): never {
   throw new Error(`Invalid post ${fileName}: ${message}`);
@@ -46,6 +48,10 @@ export function parsePost(fileName: string, raw: string): Post {
   const slug = fileName.replace(/\.mdx$/, "");
   if (!SLUG.test(slug)) fail(fileName, "file name must be lowercase words joined by hyphens, like my-post.mdx");
   const { data, content } = readFrontmatter(fileName, raw);
+  const unknownKey = Object.keys(data).find((key) => !FRONTMATTER_KEYS.includes(key));
+  if (unknownKey !== undefined) {
+    fail(fileName, `unknown frontmatter key "${unknownKey}" (allowed: ${FRONTMATTER_KEYS.join(", ")})`);
+  }
   if (typeof data.title !== "string" || data.title.trim() === "") fail(fileName, "title is required");
   const date: unknown = data.date;
   if (!isCalendarDate(date)) fail(fileName, "date must be YYYY-MM-DD and a real calendar date");
@@ -76,8 +82,12 @@ export function readPosts(dir: string = WRITING_DIR): Post[] {
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((f) => f.endsWith(".mdx"))
-    .map((f) => parsePost(f, fs.readFileSync(path.join(dir, f), "utf8")));
+    .filter((f) => MARKDOWN_FILE.test(f))
+    .map((f) => {
+      // A .md or .MDX post would otherwise be skipped without a word.
+      if (!f.endsWith(".mdx")) fail(f, "posts must use the .mdx extension (lowercase), like my-post.mdx");
+      return parsePost(f, fs.readFileSync(path.join(dir, f), "utf8"));
+    });
 }
 
 /** Published posts, newest first. */

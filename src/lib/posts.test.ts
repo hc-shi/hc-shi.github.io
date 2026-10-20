@@ -113,6 +113,20 @@ describe("getPublishedPosts", () => {
   });
 });
 
+describe("misnamed or mistyped posts", () => {
+  it.each(["my-post.md", "my-post.MDX", "my-post.markdown"])("fails on %s instead of skipping it", (name) => {
+    write(name, post(valid));
+    expect(() => getPublishedPosts(dir)).toThrow(/use the \.mdx extension/);
+    expect(() => getPublishedPosts(dir)).toThrow(name);
+  });
+
+  it("rejects unknown frontmatter keys such as a misspelt topics", () => {
+    expect(() => parsePost("a-post.mdx", post({ ...valid, topic: '["llm-agents"]' }))).toThrow(
+      /a-post\.mdx: unknown frontmatter key "topic"/,
+    );
+  });
+});
+
 describe("postStaticParams", () => {
   it("uses the placeholder when nothing is published", () => {
     expect(postStaticParams([])).toEqual([{ slug: PLACEHOLDER_SLUG }]);

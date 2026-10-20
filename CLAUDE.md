@@ -48,7 +48,7 @@ Edit `src/data/research.ts` and check authors and venue against the publisher pa
 ## Conventions
 
 - Server components only; the homepage ships no custom client JavaScript.
-- Colours come from the tokens in `globals.css`. Emblems never contain hex colours.
+- Colours come from the tokens in `globals.css`. Emblems never contain hex colours. The Hugging Face logo on the Weights button keeps its brand colours.
 - External links open in a new tab with `rel="noopener noreferrer"`.
 - English copy does not join clauses with em dashes.
 - Before pushing, make sure no private files (other CV versions, drafts, environment files) are tracked.

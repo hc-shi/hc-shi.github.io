@@ -6,8 +6,8 @@ export interface Topic {
   id: TopicId;
   name: string;
   blurb: string;
-  /** Shows the "Current focus" label. */
-  current?: boolean;
+  /** Shows the "Recent focus" label. */
+  focus?: boolean;
 }
 
 export interface PublicationLinks {

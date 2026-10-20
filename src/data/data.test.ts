@@ -13,9 +13,9 @@ const countPerTopic = (representative: boolean) =>
   topics.map((t) => publications.filter((p) => p.topic === t.id && p.representative === representative).length);
 
 describe("topics", () => {
-  it("lists the four topics in display order, with the current focus first", () => {
+  it("lists the four topics in display order, with the two focus topics first", () => {
     expect(topics.map((t) => t.id)).toEqual(["recursive-reasoning", "llm-agents", "multimodal", "robust-learning"]);
-    expect(topics.filter((t) => t.current).map((t) => t.id)).toEqual(["recursive-reasoning"]);
+    expect(topics.filter((t) => t.focus).map((t) => t.id)).toEqual(["recursive-reasoning", "llm-agents"]);
   });
 });
 

@@ -11,9 +11,9 @@ export function ResearchTopic({ view, posts }: { view: TopicView; posts: Post[] 
     <div className="mt-[30px] pt-1">
       <div className="flex flex-wrap items-baseline gap-2.5">
         <h3 className="text-[18px] font-semibold">{topic.name}</h3>
-        {topic.current && (
+        {topic.focus && (
           <span className="rounded-[10px] border border-accsoft px-[7px] py-1 font-sans text-[10px] font-semibold uppercase leading-none tracking-[.1em] text-acc">
-            Current focus
+            Recent focus
           </span>
         )}
       </div>

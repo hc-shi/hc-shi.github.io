@@ -6,13 +6,14 @@ export const topics: Topic[] = [
     name: "Latent Reasoning & Test-Time Scaling",
     blurb:
       "Models that reason in latent space, and how to scale their compute at test time.",
-    current: true,
+    focus: true,
   },
   {
     id: "llm-agents",
     name: "LLM Agents & Embodied Learning",
     blurb:
       "Language-model agents that perceive, plan and act in embodied and open-ended worlds, and keep acquiring skills.",
+    focus: true,
   },
   {
     id: "multimodal",

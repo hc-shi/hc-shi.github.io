@@ -34,12 +34,8 @@ export const metadata: Metadata = {
     description: profile.description,
     images: [{ url: "/og.png", width: 1200, height: 630, alt: profile.name }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: profile.name,
-    description: profile.description,
-    images: ["/og.png"],
-  },
+  // Only the card type: Next fills twitter title, description and image from each page's openGraph.
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

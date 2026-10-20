@@ -88,3 +88,123 @@ details[open] > .more-summary::before {
     filter: brightness(0.92);
   }
 }
+
+/* Writing: post body (spec §3.6). */
+.prose {
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+.prose > * + * {
+  margin-top: 1em;
+}
+.prose h2 {
+  margin-top: 1.8em;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.prose h3 {
+  margin-top: 1.5em;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.prose a {
+  color: var(--acc);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.prose strong {
+  font-weight: 600;
+}
+.prose ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.prose ol {
+  list-style: decimal;
+  padding-left: 1.4em;
+}
+.prose li + li {
+  margin-top: 0.3em;
+}
+.prose blockquote {
+  border-left: 2px solid var(--rule);
+  padding-left: 14px;
+  color: var(--ink2);
+  font-style: italic;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.prose :not(pre) > code {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--emb);
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+}
+/* @theme inline does not emit --font-mono at runtime, so reference the next/font variable directly. */
+.prose pre {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  background: var(--emb);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 12px 14px;
+  overflow-x: auto;
+}
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  text-align: left;
+}
+.prose th {
+  font-weight: 600;
+  background: var(--emb);
+}
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+.prose .footnotes {
+  margin-top: 2.5em;
+  border-top: 1px solid var(--rule);
+  padding-top: 1em;
+  font-size: 15px;
+  color: var(--ink2);
+}
+
+.prose pre code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* rehype-pretty-code dual themes follow the system setting. */
+.prose code[data-theme] span {
+  color: var(--shiki-light);
+}
+@media (prefers-color-scheme: dark) {
+  .prose code[data-theme] span {
+    color: var(--shiki-dark);
+  }
+}

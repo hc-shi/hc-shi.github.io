@@ -49,8 +49,8 @@ describe("titleWithPeriod", () => {
 });
 
 describe("legendText", () => {
-  it("lists both markers for the real data", () => {
-    expect(legendText(getTopicViews())).toBe("* Equal contribution · † Corresponding author");
+  it("lists only the equal-contribution marker for the real data", () => {
+    expect(legendText(getTopicViews())).toBe("* Equal contribution");
   });
 
   it("is empty when no displayed author carries a marker", () => {

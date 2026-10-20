@@ -29,7 +29,7 @@ export const topics: Topic[] = [
 ];
 
 // Authors, venues and years verified on 2026-10-19 against publisher DOI records (via OpenAlex)
-// and arXiv. "*" = equal contribution (per the CV), "†" = corresponding author (per the project page).
+// and arXiv. "*" = equal contribution (per the CV). Corresponding authors are not marked.
 export const publications: Publication[] = [
   // Latent Reasoning & Test-Time Scaling
   {
@@ -37,7 +37,7 @@ export const publications: Publication[] = [
     title: "Input-Conditioned Search for Efficient Test-Time Scaling of Recursive Reasoners",
     authors: [
       "Haochen Shi", "Tianwen Fu", "Qianggang Ding", "Yinhan Lu", "Yizhan Li",
-      "Huan Zhang", "Yajie Zhao", "Xingdi Yuan", "Hengyang Lu†", "Bang Liu†",
+      "Huan Zhang", "Yajie Zhao", "Xingdi Yuan", "Hengyang Lu", "Bang Liu",
     ],
     venue: "Preprint",
     year: 2026,

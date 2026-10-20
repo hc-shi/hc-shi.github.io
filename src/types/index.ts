@@ -20,7 +20,7 @@ export interface PublicationLinks {
 export interface Publication {
   id: string;
   title: string;
-  /** Full author list in paper order; "*" marks equal contribution, "†" a corresponding author. */
+  /** Full author list in paper order; "*" marks equal contribution. */
   authors: string[];
   /** Venue without the year, e.g. "COLM", "Findings of EMNLP", "Preprint". */
   venue: string;

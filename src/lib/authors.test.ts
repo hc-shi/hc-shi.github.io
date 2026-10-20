@@ -58,7 +58,7 @@ describe("displayAuthors", () => {
 
 describe("markersIn", () => {
   it("reports the markers present, in legend order", () => {
-    expect(markersIn(displayAuthors(authorsOf("ics"), "full"))).toEqual(["†"]);
+    expect(markersIn(displayAuthors(authorsOf("ics"), "full"))).toEqual([]);
     expect(markersIn(displayAuthors(["X†", "Y*"], "full"))).toEqual(["*", "†"]);
   });
 });

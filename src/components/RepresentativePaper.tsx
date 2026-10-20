@@ -1,13 +1,15 @@
 import { AuthorList } from "@/components/AuthorList";
 import { Emblem } from "@/components/emblems/Emblem";
+import { GitHubIcon, GlobeIcon, HuggingFaceIcon, PaperIcon } from "@/components/Icons";
 import { formatVenue } from "@/lib/research";
 import type { Publication, PublicationLinks } from "@/types";
 
-const LINKS: [keyof PublicationLinks, string][] = [
-  ["paper", "Paper"],
-  ["project", "Project page"],
-  ["code", "Code"],
-  ["weights", "Weights"],
+// Code links are on GitHub and weights on Hugging Face (data.test.ts checks this).
+const LINKS: [keyof PublicationLinks, string, typeof PaperIcon][] = [
+  ["paper", "Paper", PaperIcon],
+  ["project", "Project page", GlobeIcon],
+  ["code", "Code", GitHubIcon],
+  ["weights", "Weights", HuggingFaceIcon],
 ];
 const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 
@@ -31,13 +33,14 @@ export function RepresentativePaper({ pub }: { pub: Publication }) {
           <p className="mt-1.5 text-[14px] leading-[1.5] text-ink2">{pub.tldr}</p>
         )}
         <div className="mt-[7px] flex flex-wrap gap-2">
-          {LINKS.filter(([key]) => pub.links[key]).map(([key, label]) => (
+          {LINKS.filter(([key]) => pub.links[key]).map(([key, label, Icon]) => (
             <a
               key={key}
               href={pub.links[key]}
               {...external}
-              className="rounded-[10px] border border-rule bg-surface px-2 py-1 font-sans text-[10px] font-semibold uppercase leading-none tracking-[.08em] text-ink2 hover:border-acc hover:bg-acc hover:text-on-acc"
+              className="inline-flex items-center gap-[5px] rounded-[10px] border border-rule bg-surface px-2 py-1 font-sans text-[10px] font-semibold uppercase leading-none tracking-[.08em] text-ink2 hover:border-acc hover:bg-acc hover:text-on-acc"
             >
+              <Icon className="h-3 w-3 flex-none" />
               {label}
             </a>
           ))}

@@ -53,6 +53,13 @@ describe("publications", () => {
     }
   });
 
+  it("hosts code on GitHub and weights on Hugging Face, which the button icons show", () => {
+    for (const p of publications) {
+      if (p.links.code) expect(new URL(p.links.code).hostname, p.id).toBe("github.com");
+      if (p.links.weights) expect(new URL(p.links.weights).hostname, p.id).toBe("huggingface.co");
+    }
+  });
+
   it("keeps the author corrections verified on 2026-10-19", () => {
     expect(byId("ssal").authors.slice(2, 6)).toEqual(["Yangyang Kang", "Kun Kuang", "Siliang Tang", "Zhuoren Jiang"]);
     expect(byId("consensus-graph").authors).toEqual([

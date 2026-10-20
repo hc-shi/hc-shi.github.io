@@ -18,7 +18,7 @@ export function AuthorList({ authors, mode, endWithPeriod = false }: AuthorListP
           {separatorBefore(t, i)}
           {t.kind === "author" && t.self ? (
             <>
-              <u className="text-ink decoration-faint underline-offset-2">{t.name}</u>
+              <b className="font-semibold text-ink">{t.name}</b>
               {t.marker}
             </>
           ) : (

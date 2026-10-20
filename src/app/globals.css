@@ -3,22 +3,22 @@
 /* Design tokens (spec §4.1). Components use these, never raw colours. */
 :root {
   color-scheme: light dark;
-  --paper: #faf7f0;
+  --paper: #ffffff;
   --surface: #ffffff;
-  --emb: #f2ecdf;
-  --emb-line: #e4dccb;
-  --ink: #211c17;
-  --ink2: #4e463d;
-  --mute: #6e6458;
-  --faint: #7a6f62;
-  --rule: #e4dccb;
+  --emb: #f4f4f3;
+  --emb-line: #e6e6e4;
+  --ink: #1c1c1c;
+  --ink2: #454545;
+  --mute: #666666;
+  --faint: #737373;
+  --rule: #e6e6e4;
   --acc: #8e2a1b;
-  --accsoft: #d9b8b0;
-  --e-ink: #3a322a;
-  --e-mid: #a99d8b;
-  --e-soft: #bcb09e;
-  --e-faint: #c9bead;
-  --e-card: #faf7f0;
+  --accsoft: #e5c3bc;
+  --e-ink: #2f2f2f;
+  --e-mid: #9d9d9d;
+  --e-soft: #b8b8b8;
+  --e-faint: #cfcfcf;
+  --e-card: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

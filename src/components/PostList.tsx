@@ -13,7 +13,7 @@ export function PostList({ posts }: { posts: Post[] }) {
           <span className="block text-[13.5px] text-faint">
             <time dateTime={post.date}>{formatPostDate(post.date)}</time>
           </span>
-          <span className="block text-[14px] italic text-ink2">{post.description}</span>
+          <span className="block text-[14px] text-ink2">{post.description}</span>
         </li>
       ))}
     </ul>

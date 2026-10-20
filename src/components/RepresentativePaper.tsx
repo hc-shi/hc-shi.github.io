@@ -13,7 +13,7 @@ const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export function RepresentativePaper({ pub }: { pub: Publication }) {
   return (
-    <article className="grid grid-cols-1 gap-3 border-t border-rule py-3 min-[600px]:grid-cols-[156px_1fr] min-[600px]:gap-4">
+    <article className="grid grid-cols-1 gap-3 py-3 min-[600px]:grid-cols-[156px_1fr] min-[600px]:gap-4">
       <div className="flex h-[110px] items-center justify-center overflow-hidden rounded-md border border-emb-line bg-emb min-[600px]:h-[100px]">
         {pub.emblem && <Emblem id={pub.emblem} />}
       </div>
@@ -26,9 +26,9 @@ export function RepresentativePaper({ pub }: { pub: Publication }) {
         <p className="mt-[3px] text-[13.5px] leading-[1.45] text-mute">
           <AuthorList authors={pub.authors} mode="full" />
         </p>
-        <p className="mt-1 text-[10.5px] uppercase tracking-[.13em] text-acc">{formatVenue(pub, "representative")}</p>
+        <p className="mt-1 text-[10.5px] uppercase tracking-[.13em] text-faint">{formatVenue(pub, "representative")}</p>
         {pub.tldr && (
-          <p className="mt-1.5 border-l-2 border-rule pl-2.5 text-[14px] italic leading-[1.5] text-ink2">{pub.tldr}</p>
+          <p className="mt-1.5 text-[14px] leading-[1.5] text-ink2">{pub.tldr}</p>
         )}
         <div className="mt-[7px] flex flex-wrap gap-2">
           {LINKS.filter(([key]) => pub.links[key]).map(([key, label]) => (

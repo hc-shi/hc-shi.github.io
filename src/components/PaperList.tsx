@@ -7,7 +7,7 @@ const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 /** "N more in this topic": native <details>, closed by default, no JavaScript. */
 export function PaperList({ pubs }: { pubs: Publication[] }) {
   return (
-    <details className="border-t border-rule pb-0.5 pt-2">
+    <details className="pb-0.5 pt-2">
       <summary className="more-summary cursor-pointer font-sans text-[13px] text-ink2">
         {pubs.length} more in this topic
       </summary>
@@ -20,20 +20,20 @@ export function PaperList({ pubs }: { pubs: Publication[] }) {
             <span className="text-mute">
               <AuthorList authors={pub.authors} mode="short" endWithPeriod />
             </span>{" "}
-            <span className="text-[10px] uppercase tracking-[.13em] text-acc">{formatVenue(pub, "folded")}</span>
+            <span className="text-[10px] uppercase tracking-[.13em] text-faint">{formatVenue(pub, "folded")}</span>
             {pub.links.code && (
               <>
-                <span className="text-[10px] text-acc"> · </span>
+                <span className="text-[10px] text-faint"> · </span>
                 <a
                   href={pub.links.code}
                   {...external}
-                  className="text-[10px] uppercase tracking-[.13em] text-acc hover:underline"
+                  className="text-[10px] uppercase tracking-[.13em] text-faint hover:underline"
                 >
                   code
                 </a>
               </>
             )}
-            {pub.summary && <span className="block text-[13.5px] italic text-ink2">{pub.summary}</span>}
+            {pub.summary && <span className="block text-[13.5px] text-ink2">{pub.summary}</span>}
           </li>
         ))}
       </ul>

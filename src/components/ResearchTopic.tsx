@@ -8,7 +8,7 @@ import type { Post } from "@/types";
 export function ResearchTopic({ view, posts }: { view: TopicView; posts: Post[] }) {
   const { topic, representatives, folded } = view;
   return (
-    <div className="mt-[18px] pt-1">
+    <div className="mt-[30px] pt-1">
       <div className="flex flex-wrap items-baseline gap-2.5">
         <h3 className="text-[18px] font-semibold">{topic.name}</h3>
         {topic.current && (
@@ -17,7 +17,7 @@ export function ResearchTopic({ view, posts }: { view: TopicView; posts: Post[] 
           </span>
         )}
       </div>
-      <p className="mb-3 mt-1 text-[15px] italic leading-[1.5] text-mute">{topic.blurb}</p>
+      <p className="mb-3 mt-1 text-[15px] leading-[1.5] text-mute">{topic.blurb}</p>
       {representatives.map((pub) => (
         <RepresentativePaper key={pub.id} pub={pub} />
       ))}

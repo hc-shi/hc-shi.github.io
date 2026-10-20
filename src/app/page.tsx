@@ -1,6 +1,10 @@
+import { CompactList } from "@/components/CompactList";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { ResearchSection } from "@/components/ResearchSection";
+import { SectionHeading } from "@/components/SectionHeading";
 import { SiteNav } from "@/components/SiteNav";
+import { Timeline } from "@/components/Timeline";
+import { education, experience, teachingAndAwards } from "@/data/cv";
 import { getPublishedPosts } from "@/lib/posts";
 
 export default function HomePage() {
@@ -11,6 +15,18 @@ export default function HomePage() {
       <main>
         <ProfileHeader />
         <ResearchSection posts={posts} />
+        <section>
+          <SectionHeading>Experience</SectionHeading>
+          <Timeline entries={experience} />
+        </section>
+        <section>
+          <SectionHeading>Education</SectionHeading>
+          <Timeline entries={education} />
+        </section>
+        <section>
+          <SectionHeading>{"Teaching & Awards"}</SectionHeading>
+          <CompactList entries={teachingAndAwards} />
+        </section>
       </main>
     </>
   );

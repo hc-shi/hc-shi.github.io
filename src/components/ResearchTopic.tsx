@@ -23,7 +23,7 @@ export function ResearchTopic({ view, posts }: { view: TopicView; posts: Post[] 
       ))}
       {folded.length > 0 && <PaperList pubs={folded} />}
       {posts.length > 0 && (
-        <p className="border-t border-rule pt-2 text-[13.5px] text-mute">
+        <p className="border-t border-rule pt-2 text-[13.5px] leading-[1.45] text-mute">
           Writing on this topic:{" "}
           {posts.map((post, i) => (
             <Fragment key={post.slug}>

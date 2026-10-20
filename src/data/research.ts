@@ -3,7 +3,7 @@ import type { Publication, Topic } from "@/types";
 export const topics: Topic[] = [
   {
     id: "recursive-reasoning",
-    name: "Recursive Reasoning & Test-Time Scaling",
+    name: "Latent Reasoning & Test-Time Scaling",
     blurb:
       "Tiny models that reason by iterating one learned update on a latent state, and how to scale their compute at test time.",
     current: true,
@@ -30,7 +30,7 @@ export const topics: Topic[] = [
 // Authors, venues and years verified on 2026-10-19 against publisher DOI records (via OpenAlex)
 // and arXiv. "*" = equal contribution (per the CV), "†" = corresponding author (per the project page).
 export const publications: Publication[] = [
-  // Recursive Reasoning & Test-Time Scaling
+  // Latent Reasoning & Test-Time Scaling
   {
     id: "ics",
     title: "Input-Conditioned Search for Efficient Test-Time Scaling of Recursive Reasoners",

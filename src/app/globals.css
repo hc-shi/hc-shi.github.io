@@ -181,6 +181,14 @@ details[open] > .more-summary::before {
   font-weight: 600;
   background: var(--emb);
 }
+/* A long inline formula is one unbreakable KaTeX box: let its paragraph or list scroll, not the page.
+   Lists scroll as a whole, because overflow on an li would clip its outside bullet. */
+.prose p,
+.prose ul,
+.prose ol {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 .prose .katex-display {
   overflow-x: auto;
   overflow-y: hidden;

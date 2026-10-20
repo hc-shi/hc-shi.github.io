@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Design tokens (spec §4.1). Components use these, never raw colours. */
+:root {
+  color-scheme: light dark;
+  --paper: #faf7f0;
+  --surface: #ffffff;
+  --emb: #f2ecdf;
+  --emb-line: #e4dccb;
+  --ink: #211c17;
+  --ink2: #4e463d;
+  --mute: #6e6458;
+  --faint: #7a6f62;
+  --rule: #e4dccb;
+  --acc: #8e2a1b;
+  --accsoft: #d9b8b0;
+  --e-ink: #3a322a;
+  --e-mid: #a99d8b;
+  --e-soft: #bcb09e;
+  --e-faint: #c9bead;
+  --e-card: #faf7f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f0f0e;
+    --surface: #21211f;
+    --emb: #1c1c1a;
+    --emb-line: transparent;
+    --ink: #e8e7e4;
+    --ink2: #b4b2a9;
+    --mute: #92908b;
+    --faint: #7f7c77;
+    --rule: #30302e;
+    --acc: #e16e58;
+    --accsoft: #653a31;
+    --e-ink: #cecbc2;
+    --e-mid: #6d6b66;
+    --e-soft: #575652;
+    --e-faint: #474643;
+    --e-card: #262624;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-emb: var(--emb);
+  --color-emb-line: var(--emb-line);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-mute: var(--mute);
+  --color-faint: var(--faint);
+  --color-rule: var(--rule);
+  --color-acc: var(--acc);
+  --color-accsoft: var(--accsoft);
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-zh: var(--font-name-zh), "Songti SC", serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:where(a, summary):focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* "N more in this topic" disclosure: native <details>, no JavaScript. */
+.more-summary {
+  list-style: none;
+}
+.more-summary::-webkit-details-marker {
+  display: none;
+}
+.more-summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 14px;
+  color: var(--acc);
+}
+details[open] > .more-summary::before {
+  content: "▾";
+}
+
+@media (prefers-color-scheme: dark) {
+  .headshot {
+    filter: brightness(0.92);
+  }
+}

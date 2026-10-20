@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# testing
+/coverage
+
+# env files
+.env*
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# local tooling, never published
+.superpowers/
+docs/superpowers/
+.checks/

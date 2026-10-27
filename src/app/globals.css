@@ -5,20 +5,20 @@
   color-scheme: light dark;
   --paper: #ffffff;
   --surface: #ffffff;
-  --emb: #f4f4f3;
-  --emb-line: #e6e6e4;
+  --emb: #f0f0ee;
+  --emb-line: #dcdcd9;
   --ink: #1c1c1c;
-  --ink2: #454545;
-  --mute: #666666;
-  --faint: #737373;
-  --rule: #e6e6e4;
+  --ink2: #333333;
+  --mute: #4d4d4d;
+  --faint: #5c5c5c;
+  --rule: #dcdcd9;
   --acc: #2d6a4f;
   --accsoft: #b9d4c6;
   --on-acc: #ffffff;
   --e-ink: #2f2f2f;
-  --e-mid: #9d9d9d;
-  --e-soft: #b8b8b8;
-  --e-faint: #cfcfcf;
+  --e-mid: #6f6f6f;
+  --e-soft: #8c8c8c;
+  --e-faint: #b3b3b3;
   --e-card: #ffffff;
 }
 
@@ -29,17 +29,17 @@
     --emb: #1c1c1a;
     --emb-line: transparent;
     --ink: #e8e7e4;
-    --ink2: #b4b2a9;
-    --mute: #92908b;
-    --faint: #7f7c77;
-    --rule: #30302e;
+    --ink2: #c2c0b8;
+    --mute: #a3a19b;
+    --faint: #8f8c86;
+    --rule: #3a3a37;
     --acc: #52b788;
     --accsoft: #2d5944;
     --on-acc: #0f0f0e;
     --e-ink: #cecbc2;
-    --e-mid: #6d6b66;
-    --e-soft: #575652;
-    --e-faint: #474643;
+    --e-mid: #8a8781;
+    --e-soft: #6f6d68;
+    --e-faint: #5a5955;
     --e-card: #262624;
   }
 }
@@ -101,6 +101,7 @@ details[open] > .more-summary::before {
 
 /* Writing: post body (spec §3.6). */
 .prose {
+  max-width: 42rem;
   font-size: 17px;
   line-height: 1.7;
   overflow-wrap: break-word;

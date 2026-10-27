@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${nameZh.variable}`}>
       <body className="bg-paper font-serif leading-[1.15] text-ink antialiased">
-        <div className="mx-auto w-full max-w-[704px] px-4 pb-[30px]">
+        <div className="mx-auto w-full max-w-[820px] px-4 pb-[30px]">
           {children}
           <SiteFooter />
         </div>

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { flow, nudge, pulse } from "@/components/emblems/motion";
 
 const DIR = path.join(process.cwd(), "src/components/emblems");
 const FILES = ["ConsensusEmblem.tsx", "DiveEmblem.tsx", "IcsEmblem.tsx", "PsnEmblem.tsx", "SsalEmblem.tsx"];
@@ -22,6 +23,14 @@ describe("emblem components", () => {
 
   it.each(FILES)("%s is hidden from screen readers", (file) => {
     expect(read(file)).toContain('aria-hidden="true"');
+  });
+
+  it.each(FILES)("%s acts out its paper on hover with the shared motion classes", (file) => {
+    expect(read(file)).toMatch(/className=\{(flow|pulse|nudge)\}/);
+  });
+
+  it("moves only while the paper is hovered and only when the visitor allows motion", () => {
+    for (const motion of [flow, pulse, nudge]) expect(motion).toMatch(/\bmotion-safe:group-hover:animate-emblem-(flow|pulse|nudge)\b/);
   });
 
   it("prefixes marker ids with the emblem name so they never collide", () => {

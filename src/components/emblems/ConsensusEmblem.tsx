@@ -1,3 +1,5 @@
+import { flow, pulse } from "@/components/emblems/motion";
+
 // Consensus Graph: the image graph aligned with the caption graph; the hallucinated caption node is crossed out.
 export function ConsensusEmblem({ className }: { className?: string }) {
   return (
@@ -17,7 +19,7 @@ export function ConsensusEmblem({ className }: { className?: string }) {
         <line x1="132" y1="32" x2="118" y2="68" />
       </g>
       <line x1="132" y1="32" x2="148" y2="58" strokeWidth={1.2} strokeDasharray="2 2" style={{ stroke: "var(--e-soft)" }} />
-      <g fill="none" strokeWidth={1.4} strokeDasharray="3 3" strokeOpacity={.8} style={{ stroke: "var(--acc)" }}>
+      <g fill="none" strokeWidth={1.4} strokeDasharray="3 3" strokeOpacity={.8} className={flow} style={{ stroke: "var(--acc)" }}>
         <path d="M50 27 C 70 3, 112 3, 132 27" />
         <path d="M36 73 C 58 95, 96 95, 118 73" />
       </g>
@@ -32,7 +34,7 @@ export function ConsensusEmblem({ className }: { className?: string }) {
         <circle cx="118" cy="68" r="4.4" />
       </g>
       <circle cx="148" cy="58" r="4.4" strokeWidth={1.2} strokeDasharray="2 1.6" style={{ fill: "var(--e-card)", stroke: "var(--e-mid)" }} />
-      <path d="M143.5 53.5 L152.5 62.5 M152.5 53.5 L143.5 62.5" strokeWidth={1.6} style={{ stroke: "var(--acc)" }} />
+      <path d="M143.5 53.5 L152.5 62.5 M152.5 53.5 L143.5 62.5" strokeWidth={1.6} className={pulse} style={{ stroke: "var(--acc)" }} />
       <g fontSize={9} fontStyle="italic" textAnchor="middle" style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fill: "var(--faint)" }}>
         <text x="37" y="94">image</text>
         <text x="125" y="94">caption</text>

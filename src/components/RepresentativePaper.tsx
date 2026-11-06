@@ -14,10 +14,17 @@ const LINKS: [keyof PublicationLinks, string, typeof PaperIcon][] = [
 const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export function RepresentativePaper({ pub }: { pub: Publication }) {
+  // Hover: a light tint (-mx-3 px-3 lets it reach past the text without moving it), an accent frame,
+  // and the emblem acts out the paper (emblems/motion.ts).
   return (
-    <article className="grid grid-cols-1 gap-3 py-3 min-[600px]:grid-cols-[176px_1fr] min-[600px]:gap-4">
-      <div className="flex h-[110px] items-center justify-center overflow-hidden rounded-md border border-emb-line bg-emb min-[600px]:h-[100px]">
-        {pub.emblem && <Emblem id={pub.emblem} />}
+    <article className="group -mx-3 grid grid-cols-1 gap-3 rounded-[10px] px-3 py-3 transition-colors duration-200 hover:bg-tint min-[600px]:grid-cols-[176px_1fr] min-[600px]:gap-4">
+      <div className="flex h-[110px] items-center justify-center overflow-hidden rounded-md border border-emb-line bg-emb transition-colors duration-200 group-hover:border-accsoft min-[600px]:h-[100px]">
+        {pub.emblem && (
+          <Emblem
+            id={pub.emblem}
+            className="block h-full w-full transition-transform duration-[400ms] motion-safe:group-hover:scale-[1.04]"
+          />
+        )}
       </div>
       <div>
         <h4 className="text-[17px] font-semibold leading-[1.35]">

@@ -1,3 +1,5 @@
+import { nudge, pulse } from "@/components/emblems/motion";
+
 // SSAL: label propagation over a graph, and an adversarial step that finds a boundary sample to annotate.
 export function SsalEmblem({ className }: { className?: string }) {
   return (
@@ -46,9 +48,9 @@ export function SsalEmblem({ className }: { className?: string }) {
         <circle cx="146" cy="82" r="3" />
       </g>
       <circle cx="128" cy="66" r="4.4" strokeWidth={1.8} style={{ fill: "var(--e-card)", stroke: "var(--e-ink)" }} />
-      <circle cx="76" cy="46" r="7.5" fill="none" strokeWidth={1.4} style={{ stroke: "var(--acc)" }} />
+      <circle cx="76" cy="46" r="7.5" fill="none" strokeWidth={1.4} className={pulse} style={{ stroke: "var(--acc)" }} />
       <circle cx="76" cy="46" r="3" strokeWidth={1.3} style={{ fill: "var(--e-card)", stroke: "var(--e-ink)" }} />
-      <line x1="80" y1="44" x2="95" y2="37" strokeWidth={1.5} markerEnd="url(#ssal-arrow)" style={{ stroke: "var(--acc)" }} />
+      <line x1="80" y1="44" x2="95" y2="37" strokeWidth={1.5} markerEnd="url(#ssal-arrow)" className={nudge} style={{ stroke: "var(--acc)" }} />
       <text x="70" y="32" fontSize={12} fontStyle="italic" style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fill: "var(--acc)" }}>?</text>
     </svg>
   );

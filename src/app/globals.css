@@ -5,6 +5,7 @@
   color-scheme: light dark;
   --paper: #ffffff;
   --surface: #ffffff;
+  --tint: #f6f6f4;
   --emb: #f0f0ee;
   --emb-line: #dcdcd9;
   --ink: #1c1c1c;
@@ -26,6 +27,7 @@
   :root {
     --paper: #0f0f0e;
     --surface: #21211f;
+    --tint: #181817;
     --emb: #1c1c1a;
     --emb-line: transparent;
     --ink: #e8e7e4;
@@ -47,6 +49,7 @@
 @theme inline {
   --color-paper: var(--paper);
   --color-surface: var(--surface);
+  --color-tint: var(--tint);
   --color-emb: var(--emb);
   --color-emb-line: var(--emb-line);
   --color-ink: var(--ink);
@@ -61,6 +64,27 @@
   --font-zh: var(--font-name-zh), "Songti SC", serif;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Emblem motion while a paper is hovered (components/emblems/motion.ts).
+     The 24-unit flow cycle loops both dash patterns (3 3 and 4 4) without a jump. */
+  --animate-emblem-flow: emblem-flow 1.5s linear infinite;
+  --animate-emblem-pulse: emblem-pulse 1.6s ease-in-out infinite;
+  --animate-emblem-nudge: emblem-nudge 1.2s ease-in-out infinite;
+  @keyframes emblem-flow {
+    to {
+      stroke-dashoffset: -24;
+    }
+  }
+  @keyframes emblem-pulse {
+    50% {
+      transform: scale(1.25);
+    }
+  }
+  @keyframes emblem-nudge {
+    50% {
+      transform: translateX(2.5px);
+    }
+  }
 }
 
 :where(a, summary):focus-visible {

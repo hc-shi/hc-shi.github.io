@@ -1,3 +1,5 @@
+import { nudge, pulse } from "@/components/emblems/motion";
+
 // DiVE: rules discovered from demonstrations, verified (one rejected), then evolved into a new rule.
 export function DiveEmblem({ className }: { className?: string }) {
   return (
@@ -49,13 +51,13 @@ export function DiveEmblem({ className }: { className?: string }) {
         <path d="M83 53 l3 3 l5 -6" />
       </g>
       <path d="M84 68.5 l6 6 M90 68.5 l-6 6" strokeWidth={1.4} strokeLinecap="round" style={{ stroke: "var(--e-mid)" }} />
-      <line x1="98" y1="43" x2="110" y2="43" strokeWidth={1.5} markerEnd="url(#dive-arrow-acc)" style={{ stroke: "var(--acc)" }} />
+      <line x1="98" y1="43" x2="110" y2="43" strokeWidth={1.5} markerEnd="url(#dive-arrow-acc)" className={nudge} style={{ stroke: "var(--acc)" }} />
       <rect x="113" y="34" width="40" height="18" rx="2.5" strokeWidth={1.6} style={{ fill: "var(--e-card)", stroke: "var(--acc)" }} />
       <g strokeWidth={1.4} strokeLinecap="round" style={{ stroke: "var(--accsoft)" }}>
         <line x1="118" y1="40.5" x2="140" y2="40.5" />
         <line x1="118" y1="45.5" x2="133" y2="45.5" />
       </g>
-      <path d="M150 25 v9 M145.5 29.5 h9" strokeWidth={1.6} strokeLinecap="round" style={{ stroke: "var(--acc)" }} />
+      <path d="M150 25 v9 M145.5 29.5 h9" strokeWidth={1.6} strokeLinecap="round" className={pulse} style={{ stroke: "var(--acc)" }} />
     </svg>
   );
 }

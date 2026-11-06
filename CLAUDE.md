@@ -43,11 +43,12 @@ This repository is public. Anything in `src/content/writing/` is visible on GitH
 
 ### Add or change a paper
 
-Edit `src/data/research.ts` and check authors and venue against the publisher page or arXiv. Representatives need `tldr` and `emblem`; folded papers need `summary`. Run `npm test`.
+Edit `src/data/research.ts` and check authors and venue against the publisher page or arXiv. Representatives need `tldr` and `emblem`; folded papers need `summary`. A new emblem marks the parts that move on hover with `flow`, `pulse` or `nudge` from `src/components/emblems/motion.ts`. Run `npm test`.
 
 ## Conventions
 
 - Server components only; the homepage ships no custom client JavaScript.
+- Hovering a representative paper tints it and its emblem acts out the paper; text never moves. Touch screens see none of it, and visitors who reduce motion get only the colour change.
 - Colours come from the tokens in `globals.css`. Emblems never contain hex colours. The Hugging Face logo on the Weights button keeps its brand colours.
 - External links open in a new tab with `rel="noopener noreferrer"`.
 - English copy does not join clauses with em dashes.

@@ -1,4 +1,4 @@
-import { GitHubIcon, MailIcon, ScholarIcon } from "@/components/Icons";
+import { GitHubIcon, MailIcon, ScholarIcon, XIcon } from "@/components/Icons";
 import { RichText } from "@/components/RichText";
 import { profile } from "@/data/profile";
 
@@ -47,6 +47,9 @@ export function ProfileHeader() {
         </a>
         <a href={profile.links.github} {...external} aria-label="GitHub" title="GitHub" className={circle}>
           <GitHubIcon />
+        </a>
+        <a href={profile.links.x} {...external} aria-label="X (Twitter)" title="X (Twitter)" className={circle}>
+          <XIcon />
         </a>
         <a
           href={profile.links.cv}

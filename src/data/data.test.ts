@@ -72,6 +72,12 @@ describe("publications", () => {
   });
 });
 
+describe("profile", () => {
+  it("links to the owner's X account", () => {
+    expect(profile.links.x).toBe("https://x.com/haochen_shi3");
+  });
+});
+
 describe("copy", () => {
   it("never joins clauses with an em dash", () => {
     const prose = [

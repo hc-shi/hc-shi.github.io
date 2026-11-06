@@ -43,7 +43,7 @@ export interface Profile {
   nameZh: string;
   title: string;
   email: string;
-  links: { scholar: string; github: string; cv: string };
+  links: { scholar: string; github: string; x: string; cv: string };
   /** No trailing slash. */
   siteUrl: string;
   description: string;

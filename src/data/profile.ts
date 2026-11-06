@@ -8,6 +8,7 @@ export const profile: Profile = {
   links: {
     scholar: "https://scholar.google.com/citations?user=PqODQVwAAAAJ",
     github: "https://github.com/hcshi316",
+    x: "https://x.com/haochen_shi3",
     cv: "/cv.pdf",
   },
   siteUrl: "https://hc-shi.github.io",

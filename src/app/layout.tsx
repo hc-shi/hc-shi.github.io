@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { profile } from "@/data/profile";
+import { PAPER, THEME_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -40,16 +41,16 @@ export const metadata: Metadata = {
   icons: { icon: "data:," },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f0f0e" },
-  ],
-};
+// Light by default; THEME_SCRIPT retints the browser bar when the visitor picks dark.
+export const viewport: Viewport = { themeColor: PAPER.light };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${nameZh.variable}`}>
+    // THEME_SCRIPT may set data-theme on <html> before React hydrates; that difference is expected.
+    <html lang="en" className={`${newsreader.variable} ${nameZh.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="bg-paper font-serif leading-[1.15] text-ink antialiased">
         <div className="mx-auto w-full max-w-[820px] px-4 pb-[30px]">
           {children}

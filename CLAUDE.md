@@ -24,7 +24,7 @@ npm run preview   # serve out/ on port 4173
 - `src/content/writing/*.mdx`: posts. The file name is the URL slug.
 - `src/lib/`: display logic, each module with unit tests.
 - `src/components/emblems/`: one SVG component per representative paper.
-- `src/app/globals.css`: colour tokens (light; dark via `prefers-color-scheme`) and post typography.
+- `src/app/globals.css`: colour tokens (light by default; dark under `:root[data-theme="dark"]`) and post typography.
 - `design/`: source for `public/og.png`.
 
 ## Workflows
@@ -47,7 +47,8 @@ Edit `src/data/research.ts` and check authors and venue against the publisher pa
 
 ## Conventions
 
-- Server components only; the homepage ships no custom client JavaScript.
+- Server components only. The one custom script is the inline theme script that `layout.tsx` puts in `<head>` (`src/lib/theme.ts`); it handles every `[data-theme-toggle]` button.
+- Every visitor starts in light mode, whatever their system setting (the owner's choice). The moon/sun toggle beside the nav switches and remembers the choice. Style dark mode with `dark:` or `:root[data-theme="dark"]`, never `prefers-color-scheme`; a test fails if it appears.
 - Hovering a representative paper tints it and its emblem acts out the paper; text never moves. Touch screens see none of it, and visitors who reduce motion get only the colour change.
 - Colours come from the tokens in `globals.css`. Emblems never contain hex colours. The Hugging Face logo on the Weights button keeps its brand colours.
 - External links open in a new tab with `rel="noopener noreferrer"`.

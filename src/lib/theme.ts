@@ -7,7 +7,7 @@
 // client-side navigation renders later.
 
 /** The --paper colour of each theme in globals.css, also used for the browser bar. */
-export const PAPER = { light: "#ffffff", dark: "#0f0f0e" } as const;
+export const PAPER = { light: "#ffffff", dark: "#111815" } as const;
 
 export const THEME_SCRIPT = `(function () {
   var root = document.documentElement;

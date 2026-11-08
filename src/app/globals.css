@@ -26,27 +26,28 @@
   --e-card: #ffffff;
 }
 
-/* Dark, only after the visitor picks it with the toggle (lib/theme.ts). */
+/* Dark, only after the visitor picks it with the toggle (lib/theme.ts): green-tinted neutrals that
+   echo the accent (option C, chosen 2026-11-08). */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #0f0f0e;
-  --surface: #21211f;
-  --tint: #181817;
-  --emb: #1c1c1a;
-  --emb-line: transparent;
-  --ink: #e8e7e4;
-  --ink2: #c2c0b8;
-  --mute: #a3a19b;
-  --faint: #8f8c86;
-  --rule: #3a3a37;
-  --acc: #52b788;
-  --accsoft: #2d5944;
-  --on-acc: #0f0f0e;
-  --e-ink: #cecbc2;
-  --e-mid: #8a8781;
-  --e-soft: #6f6d68;
-  --e-faint: #5a5955;
-  --e-card: #262624;
+  --paper: #111815;
+  --surface: #1a231f;
+  --tint: #161f1b;
+  --emb: #18211d;
+  --emb-line: #25302b;
+  --ink: #e3ebe6;
+  --ink2: #c2cdc6;
+  --mute: #a2afa8;
+  --faint: #8a988f;
+  --rule: #2a3530;
+  --acc: #72cc9e;
+  --accsoft: #2b5442;
+  --on-acc: #111815;
+  --e-ink: #d2ddd6;
+  --e-mid: #9aa89f;
+  --e-soft: #7c8b82;
+  --e-faint: #5f6c65;
+  --e-card: #212b26;
 }
 
 @theme inline {

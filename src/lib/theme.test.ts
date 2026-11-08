@@ -100,6 +100,17 @@ describe("colour scheme", () => {
     expect(css).toMatch(/:root\[data-theme="dark"\]\s*\{\s*color-scheme: dark;/);
   });
 
+  it("uses the green-tinted dark palette the owner chose on 2026-11-08 (option C)", () => {
+    const block = css.match(/:root\[data-theme="dark"\] \{([^}]*)\}/)?.[1] ?? "";
+    const tokens = Object.fromEntries([...block.matchAll(/--([\w-]+): ([^;]+);/g)].map((m) => [m[1], m[2]]));
+    expect(tokens).toEqual({
+      paper: "#111815", surface: "#1a231f", tint: "#161f1b", emb: "#18211d", "emb-line": "#25302b",
+      ink: "#e3ebe6", ink2: "#c2cdc6", mute: "#a2afa8", faint: "#8a988f", rule: "#2a3530",
+      acc: "#72cc9e", accsoft: "#2b5442", "on-acc": "#111815",
+      "e-ink": "#d2ddd6", "e-mid": "#9aa89f", "e-soft": "#7c8b82", "e-faint": "#5f6c65", "e-card": "#212b26",
+    });
+  });
+
   it("tints the browser bar with the page colour of each theme", () => {
     const paper = [...css.matchAll(/--paper: (#[0-9a-f]{6});/g)].map((m) => m[1]);
     expect(paper).toEqual([PAPER.light, PAPER.dark]);

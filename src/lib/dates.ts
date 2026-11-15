@@ -7,11 +7,7 @@ export function formatPostDate(isoDate: string): string {
   );
 }
 
-/** "Last updated" date in the footer, in Montreal time (spec §2). */
-export function formatBuildDate(now: Date): string {
-  return new Intl.DateTimeFormat("en-US", { ...LONG_DATE, timeZone: "America/Toronto" }).format(now);
-}
-
+/** Copyright year in the footer, in Montreal time (spec §2). */
 export function buildYear(now: Date): string {
   return new Intl.DateTimeFormat("en-US", { year: "numeric", timeZone: "America/Toronto" }).format(now);
 }

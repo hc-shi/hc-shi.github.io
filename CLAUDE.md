@@ -20,7 +20,7 @@ npm run preview   # serve out/ on port 4173
 
 - `src/data/profile.ts`: name, title, bio, links. The bio supports `**bold**` and `[text](url)` only.
 - `src/data/research.ts`: topics and publications. `*` marks equal contribution; corresponding authors are not marked.
-- `src/data/cv.ts`: Experience, Education, Teaching & Awards.
+- `src/data/cv.ts`: Education, Teaching & Talks, Awards.
 - `src/content/writing/*.mdx`: posts. The file name is the URL slug.
 - `src/lib/`: display logic, each module with unit tests.
 - `src/components/emblems/`: one SVG component per representative paper.

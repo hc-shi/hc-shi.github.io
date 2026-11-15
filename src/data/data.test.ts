@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { education, teachingAndAwards } from "@/data/cv";
+import { awards, education, teachingAndTalks } from "@/data/cv";
 import { profile } from "@/data/profile";
 import { publications, topics } from "@/data/research";
 
@@ -92,8 +92,25 @@ describe("copy", () => {
 });
 
 describe("cv", () => {
-  it("matches the resume: 3 education rows, 8 teaching and award rows", () => {
+  it("matches the resume: 3 education rows, 4 teaching rows after the talks, 4 award rows", () => {
     expect(education).toHaveLength(3);
-    expect(teachingAndAwards).toHaveLength(8);
+    expect(teachingAndTalks.slice(2).every((row) => !row.place)).toBe(true);
+    expect(teachingAndTalks).toHaveLength(6);
+    expect(awards).toHaveLength(4);
+  });
+
+  it("lists the two talks first, newest first, as topic at place", () => {
+    expect(teachingAndTalks.slice(0, 2)).toEqual([
+      {
+        label: "Input-Conditioned Search for Efficient Test-Time Scaling of Recursive Reasoners",
+        place: { name: "NICE", href: "https://nice-intl.github.io/" },
+        period: "Nov 2026",
+      },
+      {
+        label: "Evolving Programmatic Skill Networks",
+        place: { name: "TEA Lab, UBC", href: "https://ubc-tea.github.io/lab-web/" },
+        period: "Jan 2026",
+      },
+    ]);
   });
 });

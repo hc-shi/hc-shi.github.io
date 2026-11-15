@@ -61,6 +61,8 @@ export interface TimelineEntry {
 
 export interface CompactEntry {
   label: string;
+  /** Where it happened, shown as "<label> at <place>" with the place linked (talks). */
+  place?: { name: string; href: string };
   period: string;
 }
 

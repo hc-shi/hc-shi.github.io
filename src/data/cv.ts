@@ -1,8 +1,8 @@
 import type { CompactEntry, TimelineEntry } from "@/types";
 
 // Education and teaching match the current resume (spec §3.5). The talks are not on it: the owner
-// added them on 2026-11-15, written as "<topic> at <place>" with the place linked, and titled by the
-// question the talk asks rather than the paper title. Awards were dropped from the site the same day.
+// added them on 2026-11-15, written as "<topic> at <place>" with the place linked and the topic in
+// quotes, using the owner's talk titles rather than the paper titles. Awards were dropped the same day.
 export const education: TimelineEntry[] = [
   { period: "2021 – Present", heading: "Ph.D. Computer Science", detail: "Université de Montréal / Mila" },
   { period: "2021", heading: "M.S. Computer Science", detail: "Zhejiang University" },
@@ -16,7 +16,7 @@ export const teachingAndTalks: CompactEntry[] = [
     period: "Nov 2026",
   },
   {
-    label: "Evolving Programmatic Skill Networks",
+    label: "“Self-improving agents through evolving skill networks”",
     place: { name: "TEA Lab, UBC", href: "https://ubc-tea.github.io/lab-web/" },
     period: "Jan 2026",
   },

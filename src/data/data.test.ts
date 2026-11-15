@@ -106,7 +106,7 @@ describe("cv", () => {
         period: "Nov 2026",
       },
       {
-        label: "Evolving Programmatic Skill Networks",
+        label: "“Self-improving agents through evolving skill networks”",
         place: { name: "TEA Lab, UBC", href: "https://ubc-tea.github.io/lab-web/" },
         period: "Jan 2026",
       },

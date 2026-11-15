@@ -14,7 +14,7 @@ describe("home page", () => {
 
   it.each([
     ["“Can recursive models think differently, not just long?”", "https://nice-intl.github.io/", "NICE"],
-    ["Evolving Programmatic Skill Networks", "https://ubc-tea.github.io/lab-web/", "TEA Lab, UBC"],
+    ["“Self-improving agents through evolving skill networks”", "https://ubc-tea.github.io/lab-web/", "TEA Lab, UBC"],
   ])("shows the talk on %s and links where it was given", (topic, href, place) => {
     const link = `<a href="${href}" target="_blank" rel="noopener noreferrer" class="[^"]*">${place}</a>`;
     const escaped = topic.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

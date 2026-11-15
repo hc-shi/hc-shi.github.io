@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { awards, education, teachingAndTalks } from "@/data/cv";
+import { education, teachingAndTalks } from "@/data/cv";
 import { profile } from "@/data/profile";
 import { publications, topics } from "@/data/research";
 
@@ -92,17 +92,16 @@ describe("copy", () => {
 });
 
 describe("cv", () => {
-  it("matches the resume: 3 education rows, 4 teaching rows after the talks, 4 award rows", () => {
+  it("matches the resume: 3 education rows, 4 teaching rows after the talks", () => {
     expect(education).toHaveLength(3);
     expect(teachingAndTalks.slice(2).every((row) => !row.place)).toBe(true);
     expect(teachingAndTalks).toHaveLength(6);
-    expect(awards).toHaveLength(4);
   });
 
   it("lists the two talks first, newest first, as topic at place", () => {
     expect(teachingAndTalks.slice(0, 2)).toEqual([
       {
-        label: "Input-Conditioned Search for Efficient Test-Time Scaling of Recursive Reasoners",
+        label: "“Can recursive models think differently, not just long?”",
         place: { name: "NICE", href: "https://nice-intl.github.io/" },
         period: "Nov 2026",
       },

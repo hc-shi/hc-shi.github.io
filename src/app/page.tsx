@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SiteNav } from "@/components/SiteNav";
 import { Timeline } from "@/components/Timeline";
 import { WritingSection } from "@/components/WritingSection";
-import { awards, education, teachingAndTalks } from "@/data/cv";
+import { education, teachingAndTalks } from "@/data/cv";
 import { getPublishedPosts } from "@/lib/posts";
 
 export default function HomePage() {
@@ -24,10 +24,6 @@ export default function HomePage() {
         <section>
           <SectionHeading>{"Teaching & Talks"}</SectionHeading>
           <CompactList entries={teachingAndTalks} />
-        </section>
-        <section>
-          <SectionHeading>Awards</SectionHeading>
-          <CompactList entries={awards} />
         </section>
       </main>
     </>
